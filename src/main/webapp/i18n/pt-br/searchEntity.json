@@ -1,0 +1,33 @@
+{
+  "elasticApp": {
+    "searchEntity": {
+      "home": {
+        "title": "Search Entities",
+        "createLabel": "Criar novo Search Entity",
+        "createOrEditLabel": "Criar ou editar Search Entity",
+        "notFound": "Nenhum Search Entity encontrado"
+      },
+      "created": "Um novo Search Entity foi criado com o identificador {{ param }}",
+      "updated": "Um Search Entity foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Search Entity foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Search Entity {{ id }}?"
+      },
+      "detail": {
+        "title": "Search Entity"
+      },
+      "title": "Title",
+      "link": "Link",
+      "description": "Description",
+      "tags": "Tags",
+      "searchString": "Search String",
+      "quantityClicks": "Quantity Clicks",
+      "source": "Source",
+      "sourceDate": "Source Date",
+      "smalImage": "Smal Image",
+      "postedBy": "Posted By",
+      "creationDate": "Creation Date",
+      "lastUpdate": "Last Update"
+    }
+  }
+}

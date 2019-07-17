@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="searchEntity">
+            <h2><span jhiTranslate="elasticApp.searchEntity.detail.title">Search Entity</span> {{searchEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="elasticApp.searchEntity.title">Title</span></dt>
+                <dd>
+                    <span>{{searchEntity.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.link">Link</span></dt>
+                <dd>
+                    <span>{{searchEntity.link}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.description">Description</span></dt>
+                <dd>
+                    <span>{{searchEntity.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.tags">Tags</span></dt>
+                <dd>
+                    <span>{{searchEntity.tags}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.searchString">Search String</span></dt>
+                <dd>
+                    <span>{{searchEntity.searchString}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.quantityClicks">Quantity Clicks</span></dt>
+                <dd>
+                    <span>{{searchEntity.quantityClicks}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.source">Source</span></dt>
+                <dd>
+                    <span>{{searchEntity.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.sourceDate">Source Date</span></dt>
+                <dd>
+                    <span>{{searchEntity.sourceDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.smalImage">Smal Image</span></dt>
+                <dd>
+                    <span>{{searchEntity.smalImage}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.postedBy">Posted By</span></dt>
+                <dd>
+                    <span>{{searchEntity.postedBy}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{searchEntity.creationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="elasticApp.searchEntity.lastUpdate">Last Update</span></dt>
+                <dd>
+                    <span>{{searchEntity.lastUpdate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/search-entity', searchEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
