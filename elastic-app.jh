@@ -1,0 +1,16 @@
+
+
+entity SearchEntity {
+	title String,
+    link  String,
+    description	String,
+    tags String,
+    searchString String,
+    quantityClicks Integer,        
+    source	String,
+    sourceDate Date,
+    smalImage String,
+    postedBy	String,
+    creationDate Date,
+    lastUpdate Date,
+}
