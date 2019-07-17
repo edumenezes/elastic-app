@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="elasticApp.searchEntity.home.title">Search Entities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-search-entity" [routerLink]="['/search-entity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="elasticApp.searchEntity.home.createLabel">
+            Create new Search Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="searchEntities?.length === 0">
+        <span jhiTranslate="elasticApp.searchEntity.home.notFound">No searchEntities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="searchEntities?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.title">Title</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.link">Link</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.description">Description</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.tags">Tags</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.searchString">Search String</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.quantityClicks">Quantity Clicks</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.source">Source</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.sourceDate">Source Date</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.smalImage">Smal Image</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.postedBy">Posted By</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.creationDate">Creation Date</span></th>
+            <th><span jhiTranslate="elasticApp.searchEntity.lastUpdate">Last Update</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let searchEntity of searchEntities ;trackBy: trackId">
+                <td><a [routerLink]="['/search-entity', searchEntity.id, 'view' ]">{{searchEntity.id}}</a></td>
+                <td>{{searchEntity.title}}</td>
+                <td>{{searchEntity.link}}</td>
+                <td>{{searchEntity.description}}</td>
+                <td>{{searchEntity.tags}}</td>
+                <td>{{searchEntity.searchString}}</td>
+                <td>{{searchEntity.quantityClicks}}</td>
+                <td>{{searchEntity.source}}</td>
+                <td>{{searchEntity.sourceDate | date:'mediumDate'}}</td>
+                <td>{{searchEntity.smalImage}}</td>
+                <td>{{searchEntity.postedBy}}</td>
+                <td>{{searchEntity.creationDate | date:'mediumDate'}}</td>
+                <td>{{searchEntity.lastUpdate | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/search-entity', searchEntity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/search-entity', searchEntity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'search-entity', { outlets: { popup: searchEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

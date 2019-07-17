@@ -1,0 +1,63 @@
+{
+    "name": "SearchEntity",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "link",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tags",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "searchString",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantityClicks",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sourceDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "smalImage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "lastUpdate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190717171640",
+    "entityTableName": "search_entity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

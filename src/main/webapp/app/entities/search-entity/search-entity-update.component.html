@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-search-entity-heading" jhiTranslate="elasticApp.searchEntity.home.createOrEditLabel">Create or edit a Search Entity</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.link" for="field_link">Link</label>
+                    <input type="text" class="form-control" name="link" id="field_link"
+                           formControlName="link"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.tags" for="field_tags">Tags</label>
+                    <input type="text" class="form-control" name="tags" id="field_tags"
+                           formControlName="tags"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.searchString" for="field_searchString">Search String</label>
+                    <input type="text" class="form-control" name="searchString" id="field_searchString"
+                           formControlName="searchString"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.quantityClicks" for="field_quantityClicks">Quantity Clicks</label>
+                    <input type="number" class="form-control" name="quantityClicks" id="field_quantityClicks"
+                           formControlName="quantityClicks"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.source" for="field_source">Source</label>
+                    <input type="text" class="form-control" name="source" id="field_source"
+                           formControlName="source"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.sourceDate" for="field_sourceDate">Source Date</label>
+                    <div class="input-group">
+                        <input id="field_sourceDate" type="text" class="form-control" name="sourceDate" ngbDatepicker  #sourceDateDp="ngbDatepicker" formControlName="sourceDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sourceDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.smalImage" for="field_smalImage">Smal Image</label>
+                    <input type="text" class="form-control" name="smalImage" id="field_smalImage"
+                           formControlName="smalImage"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.postedBy" for="field_postedBy">Posted By</label>
+                    <input type="text" class="form-control" name="postedBy" id="field_postedBy"
+                           formControlName="postedBy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.creationDate" for="field_creationDate">Creation Date</label>
+                    <div class="input-group">
+                        <input id="field_creationDate" type="text" class="form-control" name="creationDate" ngbDatepicker  #creationDateDp="ngbDatepicker" formControlName="creationDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="creationDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="elasticApp.searchEntity.lastUpdate" for="field_lastUpdate">Last Update</label>
+                    <div class="input-group">
+                        <input id="field_lastUpdate" type="text" class="form-control" name="lastUpdate" ngbDatepicker  #lastUpdateDp="ngbDatepicker" formControlName="lastUpdate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="lastUpdateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
